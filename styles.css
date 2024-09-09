@@ -1,0 +1,605 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient( rgb(255, 244, 219) 100%, rgb(255, 244, 219) 100%);
+  color: rgb(255, 244, 219);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.5s ease;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 90%;
+  margin-right: 15px;
+}
+
+.navbar .logo h1 {
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f39c12;
+}
+
+/* General styles for the authentication section */
+.auth-section {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  /* Center content horizontally and vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Ensure content appears above the background */
+}
+
+/* Adding a background image with dissolving effect */
+body.auth-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Style adjustments for form elements */
+.auth-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auth-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.auth-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.auth-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: Add transition effect for background */
+body.auth-page {
+  transition: background 0.5s ease-in-out;
+}
+
+.hero-section {
+  height: 100vh;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  position: relative; /* Position relative to enable overlapping gradient */
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 70%; /* Adjust based on how much of the gradient should overlap */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient( rgb(255, 244, 219) 0%, rgb(255, 244, 219) 100%);
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative; /* Ensure content is above gradient */
+  z-index: 2;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.hero-content .btn {
+  padding: 15px 30px;
+  background-color: #005a87;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #d35400;
+}
+
+/* Museums Section */
+.museums-section {
+  padding: 100px 30px;
+  background: linear-gradient(rgb(255, 244, 219)100%);
+  text-align: center;
+}
+
+.museums-section h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.museums-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Museum Cards */
+.museum-card {
+  width: 250px;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* Ensure the pseudo-element is positioned correctly */
+}
+
+.museum-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(243, 156, 18, 0.3), transparent);
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1; /* Ensure the pseudo-element is behind the card */
+  opacity: 0;
+}
+
+.museum-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.museum-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.museum-card h3 {
+  padding: 15px;
+  font-size: 24px;
+  color: #333;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.museum-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.museum-card img:hover {
+  transform: scale(1.1);
+}
+
+.museum-card:hover h3 {
+  color: #f39c12;
+  background-color: #333;
+}
+
+.museum-description {
+  background-color: #f4f4f4; /* Light grey background */
+  border-left: 5px solid #c5b358; /* Golden border on the left */
+  padding: 20px;
+  margin-bottom: 30px;
+  font-family: 'Georgia', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333; /* Dark text color */
+}
+
+.museum-description h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.museum-description p {
+  margin-bottom: 15px;
+}
+
+.museum-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tours Section */
+.videos-section {
+  padding: 100px 30px;
+  background: linear-gradient(to bottom, rgb(86, 128, 193) 50%);
+  text-align: center;
+}
+
+/* Section Heading */
+.videos-section h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Video Section Styles */
+.video-grid {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center the videos horizontally */
+  gap: 30px; /* Space between the video players */
+  flex-wrap: wrap; /* Wrap videos in smaller screens */
+}
+
+.video-card {
+  width: 45%; /* Set width for each video player */
+  max-width: 450px; /* Ensure video player doesn't exceed a certain width */
+  background-color: #040e5e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin: 10px; /* Margin around each video card */
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-card h3 {
+  padding: 15px;
+  font-size: 18px;
+  color: #ff0000;
+  text-align: center;
+}
+
+section {
+  padding: 100px 20px;
+}
+
+.description-section {
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.description-content h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.description-content p {
+  font-size: 18px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.artifacts-section {
+  background-color: #fff;
+}
+.artifacts-section h2{
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.artifacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.artifact-card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artifact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.artifact-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.artifact-card h3 {
+  font-size: 24px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.artifact-card p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Footer */
+footer {
+  padding: 60px 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+footer .contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f39c12;
+}
+
+footer .contact-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+footer .social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #f39c12;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12;
+  }
+  to {
+    text-shadow: 0 0 20px #d35400, 0 0 30px #d35400, 0 0 40px #d35400;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 20px;
+  }
+
+  .museums-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .museum-card {
+    width: 90%;
+  }
+
+  .video-card {
+    width: 90%;
+  }
+
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+/* Video Section Styles */
+.videos-section {
+  padding: 100px 30px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+/* Section Heading */
+.videos-section h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+/* Flexbox container for video cards */
+.video-grid {
+  display: flex; /* Flexbox for horizontal alignment */
+  flex-wrap: wrap; /* Allow wrapping for multiple rows */
+  justify-content: center; /* Center the items horizontally */
+  gap: 20px; /* Space between video cards */
+}
+
+/* Video card styles */
+.video-card {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+  background-size: 200% 200%; /* For animation purposes */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-position 0.3s ease; /* Smooth transition */
+  flex: 0 1 calc(50% - 40px); /* Two cards per row, with spacing accounted */
+  max-width: 500px; /* Limit maximum width to ensure they are not too wide */
+  margin-bottom: 20px; /* Add bottom margin to separate rows */
+  animation: gradientBackground 5s ease infinite; /* Apply gradient animation */
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-card h3 {
+  padding: 15px;
+  font-size: 18px;
+  color: #fff; /* Make text white to contrast against the gradient */
+  text-align: center;
+}
+
+/* Gradient background animation */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Mobile Menu */
+.menu-icon {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 200px;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-bottom: 1px solid #444;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a:hover {
+  background-color: #f39c12;
+  color: #fff;
+}
+
+.show-menu {
+  display: block;
+}
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2980b9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+  }
+
+  .scroll-top-btn.visible {
+    display: block;
+  }
+  
+  .scroll-top-btn:hover {
+    background: #1f5b9c;
+  }
