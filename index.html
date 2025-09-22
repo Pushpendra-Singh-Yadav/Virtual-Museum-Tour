@@ -8,153 +8,251 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">
-            <img src="logo.jpg" alt="The Elysée Galerie Logo">
-            <h1>The Elysée Galerie</h1>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#museums">Museums</a></li>
-                <li><a href="#videos">360° Tours</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="login.html">Login</a></li> 
-            </ul>
-        </nav>
-    </header>
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-          <h1>Welcome to Our Museum</h1>
-          <p>Discover the rich history and culture through our extensive collection of artifacts and exhibits.</p>
-          <a href="#museums" class="btn">Explore Now</a>
-        </div>
-      </section>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#home">
+        <img src="logo.jpg" alt="The Elysée Galerie Logo">
+        <span>The Elysée Galerie</span>
+      </a>
+    </div>
+
+    <!-- Hamburger for Mobile -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#museums">Museums</a></li>
+        <li><a href="#videos">360° Street Tours</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+   <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Explore Worlds of Art and History</h1>
+        <p>A curated journey through time and culture, from ancient wonders to modern masterpieces.</p>
+        <a href="#museums" class="btn">Begin Your Tour</a>
+    </div>
+</section>
+
+
+
+
     <section id="museums" class="museums-section">
-        <h2>Museums</h2>
-        <div class="museums-list">
-            <div class="museum-card">
-                <a href="museum1.html">
-                    <img src="museum1.jpg" alt="Louvre Museum">
-                    <h3>The Louvre Museum</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum2.html">
-                    <img src="museum2.jpg" alt="British Museum">
-                    <h3>The British Museum</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum3.html">
-                    <img src="museum3.jpeg" alt="Louvre Museum">
-                    <h3>The Metropolitan Museum of Art</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum4.html">
-                    <img src="museum5.jpeg" alt="British Museum">
-                    <h3>The Philadelphia Museum of Art</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum5.html">
-                    <img src="museum9.jpeg" alt="Louvre Museum">
-                    <h3>The Gallery of Modern Art</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum6.html">
-                    <img src="museum4.jpeg" alt="British Museum">
-                    <h3>The Egyptian Museum</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum7.html">
-                    <img src="museum7.jpeg" alt="Louvre Museum">
-                    <h3>The Vatican Museums</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum8.html">
-                    <img src="museum10.jpeg" alt="British Museum">
-                    <h3>The National Museum of China</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum9.html">
-                    <img src="museum8.jpeg" alt="Louvre Museum">
-                    <h3>The Acropolis Museum</h3>
-                </a>
-            </div>
-            <div class="museum-card">
-                <a href="museum10.html">
-                    <img src="museum6.jpeg" alt="British Museum">
-                    <h3>The Indian Museum</h3>
-                </a>
-            </div>
+    <div class="museums-header">
+        <h2>Explore Our Collection of Museums</h2>
+        <p>A hand-picked selection of the world's most renowned cultural institutions.</p>
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Museums</button>
+            <button class="filter-btn" data-filter="europe">Europe</button>
+            <button class="filter-btn" data-filter="americas">Americas</button>
+            <button class="filter-btn" data-filter="asia">Asia</button>
         </div>
-    </section>
+    </div>
+    <div class="museums-list">
+        <div class="museum-card" data-category="europe">
+            <a href="museum-placeholder.html" aria-label="Explore The Louvre Museum">
+                <img src="museum1.jpg" alt="An exterior view of the Louvre Museum in Paris.">
+                <h3>The Louvre Museum</h3>
+                <p>Paris, France</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="europe">
+            <a href="museum-placeholder.html" aria-label="Explore The British Museum">
+                <img src="museum2.jpg" alt="The large, classical entrance of The British Museum.">
+                <h3>The British Museum</h3>
+                <p>London, UK</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="americas">
+            <a href="museum-placeholder.html" aria-label="Explore The Metropolitan Museum of Art">
+                <img src="museum3.jpeg" alt="The grand facade of The Metropolitan Museum of Art in New York.">
+                <h3>The Metropolitan Museum of Art</h3>
+                <p>New York, USA</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="americas">
+            <a href="museum-placeholder.html" aria-label="Explore The Philadelphia Museum of Art">
+                <img src="museum5.jpeg" alt="The large, columned entrance of The Philadelphia Museum of Art.">
+                <h3>The Philadelphia Museum of Art</h3>
+                <p>Philadelphia, USA</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="europe">
+            <a href="museum-placeholder.html" aria-label="Explore The Gallery of Modern Art">
+                <img src="museum9.jpeg" alt="A modern architectural building, The Gallery of Modern Art.">
+                <h3>The Gallery of Modern Art</h3>
+                <p>Glasgow, UK</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="asia">
+            <a href="museum-placeholder.html" aria-label="Explore The Egyptian Museum">
+                <img src="museum4.jpeg" alt="An ancient artifact displayed inside The Egyptian Museum.">
+                <h3>The Egyptian Museum</h3>
+                <p>Cairo, Egypt</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="europe">
+            <a href="museum-placeholder.html" aria-label="Explore The Vatican Museums">
+                <img src="museum7.jpeg" alt="The spiral staircase inside The Vatican Museums.">
+                <h3>The Vatican Museums</h3>
+                <p>Vatican City</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="asia">
+            <a href="museum-placeholder.html" aria-label="Explore The National Museum of China">
+                <img src="museum10.jpeg" alt="The large, red sign on The National Museum of China.">
+                <h3>The National Museum of China</h3>
+                <p>Beijing, China</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="europe">
+            <a href="museum-placeholder.html" aria-label="Explore The Acropolis Museum">
+                <img src="museum8.jpeg" alt="A marble statue display in The Acropolis Museum.">
+                <h3>The Acropolis Museum</h3>
+                <p>Athens, Greece</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="asia">
+            <a href="museum-placeholder.html" aria-label="Explore The Indian Museum">
+                <img src="museum6.jpeg" alt="An ancient sculpture at The Indian Museum.">
+                <h3>The Indian Museum</h3>
+                <p>Kolkata, India</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
     <section id="videos" class="videos-section">
-        <h2>360° Virtual Tours</h2>
-        <div class="video-grid">
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
+    <div class="videos-header">
+        <h2>Immersive 360° Virtual Street Tours</h2>
+        <p>Step inside the world's greatest museums from the comfort of your home.</p>
+    </div>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="K_R99E4c8b8">
+                <img src="https://img.youtube.com/vi/K_R99E4c8b8/hqdefault.jpg" alt="Louvre Museum 360° tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
             <h3>Louvre Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>British Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>Metropolitan Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>The Prado Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>Louvre Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>British Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>Metropolitan Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>The Prado Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>Louvre Museum Tour</h3>
-          </div>
-          <div class="video-card">
-            <video src="video1.mp4" controls></video>
-            <h3>British Museum Tour</h3>
-          </div>
+            <p>Paris, France</p>
         </div>
-      </section>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="E-6k5c1-y9k">
+                <img src="https://img.youtube.com/vi/E-6k5c1-y9k/hqdefault.jpg" alt="British Museum 360° tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>British Museum Tour</h3>
+            <p>London, UK</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="4s1c6v1UaQc">
+                <img src="https://img.youtube.com/vi/4s1c6v1UaQc/hqdefault.jpg" alt="Metropolitan Museum of Art tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>Metropolitan Museum Tour</h3>
+            <p>New York, USA</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="hXn5dGv2F7c">
+                <img src="https://img.youtube.com/vi/hXn5dGv2F7c/hqdefault.jpg" alt="The Prado Museum 360° tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>The Prado Museum Tour</h3>
+            <p>Madrid, Spain</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="2oD151-5yDk">
+                <img src="https://img.youtube.com/vi/2oD151-5yDk/hqdefault.jpg" alt="The Uffizi Gallery 360° tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>The Uffizi Gallery Tour</h3>
+            <p>Florence, Italy</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="l-L_X6W09H4">
+                <img src="https://img.youtube.com/vi/l-L_X6W09H4/hqdefault.jpg" alt="Rijksmuseum tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>Rijksmuseum Tour</h3>
+            <p>Amsterdam, Netherlands</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="e6Qz3_WkS3c">
+                <img src="https://img.youtube.com/vi/e6Qz3_WkS3c/hqdefault.jpg" alt="Musée d'Orsay tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>Musée d'Orsay Tour</h3>
+            <p>Paris, France</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="u9_jF6E00D8">
+                <img src="https://img.youtube.com/vi/u9_jF6E00D8/hqdefault.jpg" alt="The Egyptian Museum tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>The Egyptian Museum Tour</h3>
+            <p>Cairo, Egypt</p>
+        </div>
+    </div>
+</section>
+
+
+
       <button class="scroll-top-btn" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i> <!-- Font Awesome chevron-up icon -->
       </button>
-    <footer id="contact">
+<footer class="main-footer">
+    <div class="footer-content">
         <div class="contact-info">
-            <h2>Contact Us</h2>
-            <p>Email: contact@elysee-galerie.com</p>
-            <p>Phone: +123 456 7890</p>
+            <h2>Get in Touch</h2>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:contact@elysee-galerie.com">contact@elysee-galerie.com</a></p>
+            <p><i class="fas fa-phone-alt"></i> Phone: +91 9465265663</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: 123 Museum St, Art City, 54321</p>
         </div>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 The Elysée Galerie. All Rights Reserved.</p>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
