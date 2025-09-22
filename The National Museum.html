@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The National Museum, New Delhi</title>
+    <link rel="stylesheet" href="museum-css/Common style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="#"><h1>The National Museum</h1></a>
+            </div>
+            <input type="checkbox" id="menu-toggle" aria-label="Toggle navigation menu">
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#tour">Virtual Tour</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>The National Museum, New Delhi</h1>
+            <p>The premier museum of India, showcasing a treasure trove of art, culture, and heritage.</p>
+        </div>
+    </section>
+
+    <section id="about" class="content-section about-section">
+        <div class="container">
+            <h2>About the Museum</h2>
+            <div class="about-flex">
+                <div class="about-text">
+                    <p>The National Museum, established in 1949, holds the honor of being India’s premier cultural institution. It was founded to collect, preserve, and display a diverse range of artifacts spanning over 5,000 years of Indian civilization.</p>
+                    <p>Located in the heart of New Delhi, the museum houses a vast collection of more than 200,000 works of art, including artifacts, paintings, coins, manuscripts, and weaponry. The museum's galleries are meticulously curated to tell the story of India's rich history, from prehistoric times to the modern era, making it a crucial center for research and education in Indian history and arts.</p>
+                </div>
+                <div class="about-image">
+                    <img src="The National Museum.jpg" alt="Exterior view of the National Museum, New Delhi" class="museum-main-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collection" class="content-section collection-section">
+        <div class="container">
+            <h2>A Glimpse into the Collections</h2>
+            <div class="collection-item">
+                <h3>Harappan Civilization Gallery</h3>
+                <p>This gallery is home to artifacts from the Indus Valley Civilization (c. 2600–1900 BCE), one of the world's oldest urban cultures. Key exhibits include the iconic bronze 'Dancing Girl' sculpture, pottery, seals, and terracotta figurines that offer a fascinating look into the daily life and artistic achievements of the ancient civilization.</p>
+            </div>
+            <div class="collection-item">
+                <h3>Buddhist Art Gallery</h3>
+                <p>The museum’s Buddhist art collection is unparalleled. It features rare artifacts from the Mauryan, Sunga, and Kushana periods, including relics of the Buddha from Piprahwa. The gallery's centerpiece is a colossal statue of a standing Buddha from Mathura, carved in red sandstone.</p>
+            </div>
+            <div class="collection-item">
+                <h3>Indian Miniature Painting Gallery</h3>
+                <p>Explore the intricate world of Indian miniature paintings from various schools like Mughal, Rajasthani, and Pahari. These exquisite paintings, often made with natural pigments, depict mythological stories, royal portraits, and scenes from daily life with incredible detail and vibrancy.</p>
+            </div>
+            <div class="collection-item">
+                <h3>Coin Collection</h3>
+                <p>The Numismatics section is one of the richest in Asia, with coins spanning from ancient to medieval periods. The collection chronicles the history of Indian kingdoms and trade routes through their currency, including punch-marked coins, Gupta gold coins, and Sultanate-era silver coins.</p>
+            </div>
+            <div class="collection-item">
+                <h3>Arms and Armour Gallery</h3>
+                <p>This gallery showcases the evolution of military technology in India. It features a wide range of swords, daggers, bows, and other weapons used by ancient and medieval warriors. The craftsmanship is breathtaking, with many pieces adorned with intricate gold and silver inlay work.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="content-section virtual-tour-section">
+        <div class="container">
+            <h2>Take a Virtual Tour</h2>
+            <div class="video-container">
+                <div class="video-placeholder" data-video-id="K_R99E4c8b8">
+                    <img src="https://img.youtube.com/vi/K_R99E4c8b8/hqdefault.jpg" alt="National Museum virtual tour thumbnail">
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="video-description">Embark on a guided virtual tour to explore the museum's major galleries and iconic artifacts from the comfort of your home.</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="main-footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Janpath, New Delhi, Delhi 110011</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:nm-hello@nic.in">nm-hello@nic.in</a></p>
+                <p><i class="fas fa-phone-alt"></i> Phone: +91 11 2301 9272</p>
+            </div>
+            <div class="social-icons">
+                <h2>Follow Us</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The National Museum. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="museum-js/common.js"></script>
+</body>
+</html>

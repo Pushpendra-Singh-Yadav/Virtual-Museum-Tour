@@ -7,36 +7,130 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Global Message Box -->
+    <div id="message-box" class="fixed top-4 right-4 z-[9999] p-4 text-sm font-semibold rounded-lg shadow-lg hidden"></div>
+
+    <!-- Header -->
     <header class="navbar">
-  <div class="container">
-    <!-- Logo -->
-    <div class="logo">
-      <a href="#home">
-        <img src="logo.jpg" alt="The Elysée Galerie Logo">
-        <span>The Elysée Galerie</span>
-      </a>
-    </div>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#home" data-target="home-section">
+                    <img src="https://placehold.co/40x40/5c6ac4/ffffff?text=EG" alt="The Elysée Galerie Logo">
+                    <span>The Elysée Galerie</span>
+                </a>
+            </div>
 
-    <!-- Hamburger for Mobile -->
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+            <!-- Hamburger for Mobile -->
+            <div class="menu-toggle lg:hidden" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#museums">Museums</a></li>
-        <li><a href="#videos">360° Street Tours</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="signup.html" class="btn-signup">Sign Up</a></li>
-        <li><a href="login.html" class="btn-login">Login</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+            <!-- Navigation -->
+            <nav class="nav hidden lg:block" id="nav-menu">
+                <ul class="nav-links flex space-x-4 items-center">
+                    <li><button data-target="home-section" class="active">Home</button></li>
+                    <li><button data-target="museums-section">Museums</button></li>
+                    <li><button data-target="videos-section">360° Street Tours</button></li>
+                    <li><button data-target="contact-section">Contact</button></li>
+                    <li><button data-target="signup-section" id="btn-signup" class="btn-signup">Sign Up</button></li>
+                    <li><button data-target="login-section" id="btn-login" class="btn-login">Login</button></li>
+                    <li class="hidden" id="auth-links">
+                        <button id="btn-profile" class="btn-login" data-target="profile-section">Profile</button>
+                        <button id="btn-logout" class="btn-signup">Log Out</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+        <!-- Login Section -->
+        <section id="login-section" class="page-section hidden">
+            <div class="form-container">
+                <h2 class="text-center text-3xl font-bold mb-8">Login to Your Account</h2>
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="login-email" class="sr-only">Email address</label>
+                        <input id="login-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
+                    </div>
+                    <div>
+                        <label for="login-password" class="sr-only">Password</label>
+                        <input id="login-password" name="password" type="password" autocomplete="current-password" required class="form-input" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit" class="form-button">Sign in</button>
+                    </div>
+                </form>
+                <p class="mt-6 text-center text-sm text-gray-600">
+                    Don't have an account?
+                    <button data-target="signup-section" class="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">Sign up here</button>
+                </p>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section id="signup-section" class="page-section hidden">
+            <div class="form-container">
+                <h2 class="text-center text-3xl font-bold mb-8">Create an Account</h2>
+                <form id="signup-form" class="space-y-6">
+                    <div>
+                        <label for="signup-email" class="sr-only">Email address</label>
+                        <input id="signup-email" name="email" type="email" autocomplete="email" required class="form-input" placeholder="Email address">
+                    </div>
+                    <div>
+                        <label for="signup-password" class="sr-only">Password</label>
+                        <input id="signup-password" name="password" type="password" autocomplete="new-password" required class="form-input" placeholder="Password">
+                    </div>
+                    <div>
+                        <button type="submit" class="form-button">Sign up</button>
+                    </div>
+                </form>
+                <p class="mt-6 text-center text-sm text-gray-600">
+                    Already have an account?
+                    <button data-target="login-section" class="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">Login here</button>
+                </p>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile-section" class="page-section hidden">
+            <div class="container mx-auto p-8 bg-white shadow-xl rounded-2xl max-w-3xl">
+                <h2 class="text-3xl font-bold mb-6 text-center">User Profile</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-gray-700">User Details</h3>
+                        <p class="text-gray-600 mt-2"><strong>Email:</strong> <span id="user-email-display"></span></p>
+                        <p class="text-gray-600 mt-2"><strong>User ID:</strong> <span id="user-id-display" class="break-all"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Sections (placeholders for now) -->
+        <section id="museums-section" class="page-section hidden">
+            <div class="container mx-auto max-w-2xl text-center py-16">
+                <h2 class="text-4xl font-bold mb-4">Museums</h2>
+                <p class="text-lg text-gray-600">Explore our curated collection of virtual museum tours.</p>
+            </div>
+        </section>
+
+        <section id="videos-section" class="page-section hidden">
+            <div class="container mx-auto max-w-2xl text-center py-16">
+                <h2 class="text-4xl font-bold mb-4">360° Street Tours</h2>
+                <p class="text-lg text-gray-600">Take a virtual walk through the most famous streets in the world.</p>
+            </div>
+        </section>
+
+        <section id="contact-section" class="page-section hidden">
+            <div class="container mx-auto max-w-2xl text-center py-16">
+                <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600">Get in touch with the Elysée Galerie team.</p>
+            </div>
+        </section>
+    </main>
 
    <section id="home" class="hero-section">
     <div class="hero-overlay"></div>
@@ -52,84 +146,84 @@
 
     <section id="museums" class="museums-section">
     <div class="museums-header">
-        <h2>Explore Our Collection of Museums</h2>
-        <p>A hand-picked selection of the world's most renowned cultural institutions.</p>
+        <h2>Explore Our Collection of Indian Museums</h2>
+        <p>A hand-picked selection of India's most renowned cultural institutions.</p>
         <div class="filter-bar">
             <button class="filter-btn active" data-filter="all">All Museums</button>
-            <button class="filter-btn" data-filter="europe">Europe</button>
-            <button class="filter-btn" data-filter="americas">Americas</button>
-            <button class="filter-btn" data-filter="asia">Asia</button>
+            <button class="filter-btn" data-filter="north">North India</button>
+            <button class="filter-btn" data-filter="south">South India</button>
+            <button class="filter-btn" data-filter="east">East & West India</button>
         </div>
     </div>
     <div class="museums-list">
-        <div class="museum-card" data-category="europe">
-            <a href="museum-placeholder.html" aria-label="Explore The Louvre Museum">
-                <img src="museum1.jpg" alt="An exterior view of the Louvre Museum in Paris.">
-                <h3>The Louvre Museum</h3>
-                <p>Paris, France</p>
+        <div class="museum-card" data-category="north">
+            <a href="The National Museum.html" aria-label="Explore The National Museum, New Delhi">
+                <img src="The National Museum.jpg" alt="An exterior view of The National Museum, New Delhi.">
+                <h3>The National Museum</h3>
+                <p>New Delhi</p>
             </a>
         </div>
-        <div class="museum-card" data-category="europe">
-            <a href="museum-placeholder.html" aria-label="Explore The British Museum">
-                <img src="museum2.jpg" alt="The large, classical entrance of The British Museum.">
-                <h3>The British Museum</h3>
-                <p>London, UK</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="americas">
-            <a href="museum-placeholder.html" aria-label="Explore The Metropolitan Museum of Art">
-                <img src="museum3.jpeg" alt="The grand facade of The Metropolitan Museum of Art in New York.">
-                <h3>The Metropolitan Museum of Art</h3>
-                <p>New York, USA</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="americas">
-            <a href="museum-placeholder.html" aria-label="Explore The Philadelphia Museum of Art">
-                <img src="museum5.jpeg" alt="The large, columned entrance of The Philadelphia Museum of Art.">
-                <h3>The Philadelphia Museum of Art</h3>
-                <p>Philadelphia, USA</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="europe">
-            <a href="museum-placeholder.html" aria-label="Explore The Gallery of Modern Art">
-                <img src="museum9.jpeg" alt="A modern architectural building, The Gallery of Modern Art.">
-                <h3>The Gallery of Modern Art</h3>
-                <p>Glasgow, UK</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="asia">
-            <a href="museum-placeholder.html" aria-label="Explore The Egyptian Museum">
-                <img src="museum4.jpeg" alt="An ancient artifact displayed inside The Egyptian Museum.">
-                <h3>The Egyptian Museum</h3>
-                <p>Cairo, Egypt</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="europe">
-            <a href="museum-placeholder.html" aria-label="Explore The Vatican Museums">
-                <img src="museum7.jpeg" alt="The spiral staircase inside The Vatican Museums.">
-                <h3>The Vatican Museums</h3>
-                <p>Vatican City</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="asia">
-            <a href="museum-placeholder.html" aria-label="Explore The National Museum of China">
-                <img src="museum10.jpeg" alt="The large, red sign on The National Museum of China.">
-                <h3>The National Museum of China</h3>
-                <p>Beijing, China</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="europe">
-            <a href="museum-placeholder.html" aria-label="Explore The Acropolis Museum">
-                <img src="museum8.jpeg" alt="A marble statue display in The Acropolis Museum.">
-                <h3>The Acropolis Museum</h3>
-                <p>Athens, Greece</p>
-            </a>
-        </div>
-        <div class="museum-card" data-category="asia">
-            <a href="museum-placeholder.html" aria-label="Explore The Indian Museum">
-                <img src="museum6.jpeg" alt="An ancient sculpture at The Indian Museum.">
+        <div class="museum-card" data-category="east">
+            <a href="The Indian Museum.html" aria-label="Explore The Indian Museum, Kolkata">
+                <img src="The Indian Museum.jpg" alt="The large, classical entrance of The Indian Museum, Kolkata.">
                 <h3>The Indian Museum</h3>
-                <p>Kolkata, India</p>
+                <p>Kolkata</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="south">
+            <a href="The Salar Jung Museum.html" aria-label="Explore The Salar Jung Museum">
+                <img src="The Salar Jung Museum.jpg" alt="The grand facade of The Salar Jung Museum in Hyderabad.">
+                <h3>The Salar Jung Museum</h3>
+                <p>Hyderabad</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="north">
+            <a href="Government Museum & Art Gallery.html" aria-label="Explore Government Museum and Art Gallery, Chandigarh">
+                <img src="Government Museum & Art Gallery.jpg" alt="The modernist facade of the Government Museum in Chandigarh.">
+                <h3>Government Museum & Art Gallery</h3>
+                <p>Chandigarh</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="east">
+            <a href="CSM Vastu Sangrahalaya.html" aria-label="Explore The Chhatrapati Shivaji Maharaj Vastu Sangrahalaya">
+                <img src="CSM Vastu Sangrahalaya.jpg" alt="The grand, colonial-era architecture of the museum in Mumbai.">
+                <h3>CSM Vastu Sangrahalaya</h3>
+                <p>Mumbai</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="south">
+            <a href="Visvesvaraya Museum.html" aria-label="Explore The Visvesvaraya Industrial and Technological Museum">
+                <img src="Visvesvaraya Museum.jpg" alt="An industrial exhibit at the Visvesvaraya Museum in Bengaluru.">
+                <h3>Visvesvaraya Museum</h3>
+                <p>Bengaluru</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="north">
+            <a href="The National Rail Museum.html" aria-label="Explore The National Rail Museum">
+                <img src="The National Rail Museum.jpeg" alt="A vintage locomotive at The National Rail Museum in New Delhi.">
+                <h3>The National Rail Museum</h3>
+                <p>New Delhi</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="south">
+            <a href="The Napier Museum.html" aria-label="Explore The Napier Museum">
+                <img src="The Napier Museum.jpeg" alt="The ornate, Indo-Saracenic architecture of the Napier Museum.">
+                <h3>The Napier Museum</h3>
+                <p>Thiruvananthapuram</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="north">
+            <a href="The Albert Hall Museum.html" aria-label="Explore The Albert Hall Museum">
+                <img src="The Albert Hall Museum.jpeg" alt="The majestic exterior of The Albert Hall Museum in Jaipur.">
+                <h3>The Albert Hall Museum</h3>
+                <p>Jaipur</p>
+            </a>
+        </div>
+        <div class="museum-card" data-category="east">
+            <a href="The Museum of Christian Art.html" aria-label="Explore The Indian Museum, Kolkata">
+                <img src="The Museum of Christian Art.jpg" alt="The Museum of Christian Art, Goa.">
+                <h3>The Museum of Christian Art</h3>
+                <p>Goa</p>
             </a>
         </div>
     </div>
@@ -145,83 +239,93 @@
     <div class="video-grid">
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="K_R99E4c8b8">
-                <img src="https://img.youtube.com/vi/K_R99E4c8b8/hqdefault.jpg" alt="Louvre Museum 360° tour thumbnail">
+                <img src="https://img.youtube.com/vi/K_R99E4c8b8/hqdefault.jpg" alt="The National Museum 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>Louvre Museum Tour</h3>
-            <p>Paris, France</p>
+            <h3>The National Museum Tour</h3>
+            <p>New Delhi, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="E-6k5c1-y9k">
-                <img src="https://img.youtube.com/vi/E-6k5c1-y9k/hqdefault.jpg" alt="British Museum 360° tour thumbnail">
+                <img src="https://img.youtube.com/vi/E-6k5c1-y9k/hqdefault.jpg" alt="The Indian Museum 360° streettour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>British Museum Tour</h3>
-            <p>London, UK</p>
+            <h3>The Indian Museum Tour</h3>
+            <p>Kolkata, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="4s1c6v1UaQc">
-                <img src="https://img.youtube.com/vi/4s1c6v1UaQc/hqdefault.jpg" alt="Metropolitan Museum of Art tour thumbnail">
+                <img src="https://img.youtube.com/vi/4s1c6v1UaQc/hqdefault.jpg" alt="The Salar Jung Museum 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>Metropolitan Museum Tour</h3>
-            <p>New York, USA</p>
+            <h3>The Salar Jung Museum Tour</h3>
+            <p>Hyderabad, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="hXn5dGv2F7c">
-                <img src="https://img.youtube.com/vi/hXn5dGv2F7c/hqdefault.jpg" alt="The Prado Museum 360° tour thumbnail">
+                <img src="https://img.youtube.com/vi/hXn5dGv2F7c/hqdefault.jpg" alt="Government Museum & Art Gallery 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>The Prado Museum Tour</h3>
-            <p>Madrid, Spain</p>
+            <h3>The Government Museum & Art Gallery Tour</h3>
+            <p>Chandigarh, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="2oD151-5yDk">
-                <img src="https://img.youtube.com/vi/2oD151-5yDk/hqdefault.jpg" alt="The Uffizi Gallery 360° tour thumbnail">
+                <img src="https://img.youtube.com/vi/2oD151-5yDk/hqdefault.jpg" alt="CSM Vastu Sangrahalaya 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>The Uffizi Gallery Tour</h3>
-            <p>Florence, Italy</p>
+            <h3>The CSM Vastu Sangrahalaya Tour</h3>
+            <p>Mumbai, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="l-L_X6W09H4">
-                <img src="https://img.youtube.com/vi/l-L_X6W09H4/hqdefault.jpg" alt="Rijksmuseum tour thumbnail">
+                <img src="https://img.youtube.com/vi/l-L_X6W09H4/hqdefault.jpg" alt="Visvesvaraya Museum 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>Rijksmuseum Tour</h3>
-            <p>Amsterdam, Netherlands</p>
+            <h3>Visvesvaraya Museum Tour</h3>
+            <p>Bengaluru, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="e6Qz3_WkS3c">
-                <img src="https://img.youtube.com/vi/e6Qz3_WkS3c/hqdefault.jpg" alt="Musée d'Orsay tour thumbnail">
+                <img src="https://img.youtube.com/vi/e6Qz3_WkS3c/hqdefault.jpg" alt="The National Rail Museum 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>Musée d'Orsay Tour</h3>
-            <p>Paris, France</p>
+            <h3>The National Rail Museum Tour</h3>
+            <p>New Delhi, India</p>
         </div>
         <div class="video-card">
             <div class="video-thumbnail" data-video-id="u9_jF6E00D8">
-                <img src="https://img.youtube.com/vi/u9_jF6E00D8/hqdefault.jpg" alt="The Egyptian Museum tour thumbnail">
+                <img src="https://img.youtube.com/vi/u9_jF6E00D8/hqdefault.jpg" alt="The Albert Hall Museum 360° street tour thumbnail">
                 <div class="play-btn">
                     <i class="fas fa-play"></i>
                 </div>
             </div>
-            <h3>The Egyptian Museum Tour</h3>
-            <p>Cairo, Egypt</p>
+            <h3>The Albert Hall Museum</h3>
+            <p>Jaipur, India</p>
+        </div>
+        <div class="video-card">
+            <div class="video-thumbnail" data-video-id="u9_jF6E00D8">
+                <img src="https://img.youtube.com/vi/u9_jF6E00D8/hqdefault.jpg" alt="The Museum of Christian Art 360° street tour thumbnail">
+                <div class="play-btn">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+            <h3>The Museum of Christian Art</h3>
+            <p>Goa, India</p>
         </div>
     </div>
 </section>
